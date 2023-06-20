@@ -1,0 +1,32 @@
+#port no
+server:
+  port: 8090
+
+#secret key generated from openAI account
+openai_api_key: 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 
+
+
+#Application no
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/innovative
+    username: root
+    password: Softtek@2022
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+      
+  application:
+    name: CHATGPT-SERVICE
+ 
+
+
+
