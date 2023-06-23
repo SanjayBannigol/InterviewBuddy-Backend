@@ -3,14 +3,14 @@ server:
   port: 8090
 
 #secret key generated from openAI account
-openai_api_key: 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 
+openai_api_key: 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 
 
 
 #Application no
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/innovative
+    url: jdbc:mysql://localhost:3306/interview_gen_app
     username: root
     password: Softtek@2022
 
