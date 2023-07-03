@@ -28,6 +28,8 @@ public class Feedback {
 	private String result;
 
 	private String remark;
+	
+	private String score;
 
 	private LocalDate date;
 
