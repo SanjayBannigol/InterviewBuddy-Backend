@@ -25,9 +25,11 @@ public class Feedback {
 
 	private String candidateName;
 
-	private String remark;
+	private String result;
 
-	private Integer rating;
+	private String remark;
+	
+	private String score;
 
 	private LocalDate date;
 
