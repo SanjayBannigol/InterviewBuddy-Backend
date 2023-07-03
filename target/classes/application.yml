@@ -3,7 +3,7 @@ server:
   port: 8090
 
 #secret key generated from openAI account
-openai_api_key: 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 
+openai_api_key: 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 
 
 
 #Application no
