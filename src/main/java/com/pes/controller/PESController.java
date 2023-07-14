@@ -1,12 +1,14 @@
 package com.pes.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,6 +88,22 @@ public class PESController {
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@CrossOrigin("http://localhost:4200")
+    @GetMapping("/findById/{id}")
+    public ResponseEntity<?> findById(@PathVariable Integer id) {
+        try {
+            Optional<Feedback> byId = feedbackService.fetechById(id);
+            if (byId.isPresent()) {
+                System.out.println(byId.get().getId());
+                return new ResponseEntity<Optional<Feedback>>(byId, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<String>("Id not fount", HttpStatus.OK);
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 	
 
 	private String chatWithGpt3(String message) throws Exception {

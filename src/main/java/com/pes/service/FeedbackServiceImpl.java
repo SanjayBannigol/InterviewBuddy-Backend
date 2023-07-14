@@ -1,7 +1,7 @@
 package com.pes.service;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +24,14 @@ public class FeedbackServiceImpl implements IFeedbackService {
 	@Override
 	public String saveFeedback(Feedback feedbackData) {
 		Feedback save = feedbackRepo.save(feedbackData);
-		return "Succussfully saved feedback from " +save.getInterviewerName() +" for candidate name "+save.getCandidateName() ;
+		return "Succussfully saved feedback from " + save.getInterviewerName() + " for candidate name "
+				+ save.getCandidateName();
 	}
 
+	@Override
+	public Optional<Feedback> fetechById(int id) {
+		Optional<Feedback> findById = feedbackRepo.findById(id);
+		return findById;
+	}
 
 }
